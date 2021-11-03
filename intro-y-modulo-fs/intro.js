@@ -14,25 +14,25 @@ console.log(2) */
 /* const fn = () => {
 
 } */
-/* 
+ 
 function handleReadFile(cb) {
     console.log(cb)
     return (err, data) => {
         console.log(data.toString())
         cb()
     }
-} */
-/* MIRAR ESTE CASO
+}
+
 fs.readFile('./archivo1.txt', handleReadFile(
-    fs.readFile('./archivo2.txt', handleReadFile(
-        fs.readFile('./archivo3.txt', handleReadFile(
+    () => fs.readFile('./archivo2.txt', handleReadFile(
+        () => fs.readFile('./archivo3.txt', handleReadFile(
             () => {
                 console.log('fin')
             }
         ))
     ))
 ))
- */
+
 /* 
 fs.readFile('./archivo1.txt', (err, data) => {
     console.log(data.toString())
@@ -40,7 +40,7 @@ fs.readFile('./archivo1.txt', (err, data) => {
 }) */
 
 
-
+/* 
 fs.readFile('./archivo1.txt', (err, data) => {
     console.log(data.toString())
 
@@ -52,7 +52,7 @@ fs.readFile('./archivo1.txt', (err, data) => {
         })
     })
 })
-
+ */
 /* 
 function a() {
 
@@ -100,7 +100,7 @@ const serie2 = {
 }
 
 /* serie2.verEpisodio = serie2.verEpisodio.bind(serie2) */
-
+/* 
 console.log(serie.numEpisodiosVistos)
 console.log(serie2.numEpisodiosVistos)
 
@@ -110,8 +110,8 @@ console.log(this)
 
 console.log(serie.numEpisodiosVistos)
 console.log(serie2.numEpisodiosVistos)
-
-
+ */
+/* 
 fsPromises.readFile('./archivo1.txt')
     .then((data) => {
         console.log(data.toString() + '!')
@@ -131,7 +131,7 @@ fsPromises.readFile('./archivo1.txt')
 const dameElMensaje = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve('Un mensaje cualquiera...')
-        /* reject('Mensaje no encontrado :(') */
+        // reject('Mensaje no encontrado :(')
     }, 1500)
 })
 
@@ -157,7 +157,7 @@ fs.writeFile('./mensajeCallback.txt', mensaje, (err) => {
     }
     console.log('Se ha creado correctamente')
 })
-
+ */
 /* 
 cobrarMesDeNetflix(id, (err) => {
     if (err) {
@@ -176,7 +176,7 @@ const series = [
 
 // Separar series en seriesNoVistas y seriesVistas
 // Crear un archivo con seriesNoVistas y otro con seriesVistas
-
+/* 
 const seriesVistas = series.filter((serie) => {
     return serie.vista
 })
@@ -194,7 +194,7 @@ fsPromises.writeFile('series-vistas.json', JSON.stringify(seriesVistas, null, 2)
 fs.writeFile('series-no-vistas.json', JSON.stringify(seriesNoVistas, null, 2), (err) => {
     console.log('Series no vistas guardadas...')
 })
-
+ */
 /* 
 let sNoVistas = [], sVistas = [];
 series.forEach((serie) => {

@@ -1,0 +1,22 @@
+[
+    {
+        "nombre": "Charles Falco",
+        "email": "cfalco@gmail.com",
+        "telefono": "+39 678 678 678"
+    },
+    {
+        "nombre": "Octavia Blake",
+        "email": "oblake@gmail.com",
+        "telefono": "+36 666 777 888"
+    },
+    {
+        "email": "angel@gmail.com",
+        "nombre": "Angel",
+        "telefono": "676676676"
+    },
+    {
+        "email": "asdas@aadsad.es",
+        "nombre": "aaaa",
+        "telefono": "324234234"
+    }
+]

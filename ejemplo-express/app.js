@@ -15,6 +15,11 @@ server.listen(3000, () => {
 
 const app = express()
 
+//app.set('view engine', 'ejs')
+app.set('view engine', 'pug')
+app.set('views', 'pages')
+app.set('PORT', 3000)
+
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use((req, res, next) => {
@@ -50,7 +55,6 @@ app.use(
     } */
 )
 
-
 app.use('/datos', datosRouter)
 app.use('/mis-datos', (req, res, next) => {
     res.redirect('/datos')
@@ -62,6 +66,6 @@ app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'pages', '404.html'))
 })
 
-app.listen(3000, () => {
+app.listen(app.get('PORT'), () => {
     console.log('Listening on http://localhost:3000')
 })

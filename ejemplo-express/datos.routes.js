@@ -2,7 +2,13 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-    res.send({datos: [1, 2, 3]})
+    res.render('usuarios', {
+        usuarios: [
+            { nombre: 'Charles', apellidos: 'Falco' },
+            { nombre: 'Octavia', apellidos: 'Blake' }
+        ]
+    })
+    //res.send({datos: [1, 2, 3]})
 })
 
 router.post('/', (req, res, next) => {

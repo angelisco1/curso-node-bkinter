@@ -1,0 +1,17 @@
+<%- include('includes/header.ejs') %>
+
+<body>
+    <h1>Usuarios</h1>
+
+    <% if (usuarios.length > 0) { %>
+        <ul>
+            <% for (let usuario of usuarios) { %>
+                <li class="usuario"><%= usuario.nombre %> <%= usuario.apellidos %></li>
+            <% } %>
+        </ul>
+    <% } else { %>
+        <p>No hay usuarios :(</p>
+    <% } %>
+
+</body>
+</html>

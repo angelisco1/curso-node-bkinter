@@ -4,8 +4,14 @@
   <li>
     <a [routerLink]="['/']">Inicio</a>
   </li>
-  <li>
+  <li *ngIf="estaLogueado">
     <a [routerLink]="['/nuevo-vendehumo']">Nuevo vendehumo</a>
+  </li>
+  <li *ngIf="!estaLogueado">
+    <a [routerLink]="['/login']">Login</a>
+  </li>
+  <li *ngIf="estaLogueado">
+    <button (click)="logout()">Logout</button>
   </li>
 </ul>
 

@@ -1,1 +1,21 @@
-<p>formulario works!</p>
+<form [formGroup]="formulario" (ngSubmit)="guardar()">
+    <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" formControlName="nombre">
+    </div>
+    <div>
+        <label for="descripcion">Descripcion</label>
+        <input type="text" id="descripcion" formControlName="descripcion">
+    </div>
+    <div>
+        <label for="categoria">Categoria</label>
+        <select id="categoria" (change)="setCategoria($event)">
+            <option value="">-</option>
+            <option value="crypto">Crypto</option>
+            <option value="apuestas">Apuestas</option>
+            <option value="ingles">Ingles</option>
+            <option value="trading">Trading</option>
+        </select>
+    </div>
+    <button type="submit" [disabled]="formulario.invalid">Guardar</button>
+</form>

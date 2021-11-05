@@ -1,4 +1,5 @@
 const Vendehumo = require('../models/vendehumo')
+const emitter = require('../helpers/emitter')
 
 exports.getVendehumos = (req, res, next) => {
     Vendehumo.getVendehumos()
@@ -32,6 +33,13 @@ exports.updateVotos = (req, res, next) => {
         })
         .then(result => {
             console.log(result)
+            
+            const datos = {
+                id,
+                votos
+            }
+            emitter.emit('votosCambiados', datos);
+
             res.json({votos: votos})
         })
 }

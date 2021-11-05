@@ -1,4 +1,5 @@
 <div *ngIf="vh">
     <p>{{vh.nombre}}</p>
     <p>{{vh.categoria}}</p>
+    <button type="button" (click)="votar()" [disabled]="!estaLogueado">Votar ({{vh.votos}})</button>
 </div>

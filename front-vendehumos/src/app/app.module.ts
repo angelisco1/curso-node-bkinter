@@ -7,8 +7,9 @@ import { VendehumoComponent } from './vendehumo/vendehumo.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { DetalleVendehumoComponent } from './detalle-vendehumo/detalle-vendehumo.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   declarations: [
@@ -16,13 +17,15 @@ import { HttpClientModule } from '@angular/common/http'
     VendehumoComponent,
     InicioComponent,
     FormularioComponent,
-    DetalleVendehumoComponent
+    DetalleVendehumoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

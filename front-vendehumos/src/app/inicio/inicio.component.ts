@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VendehumosService } from '../vendehumos.service';
+import { socket } from '../../main'
 
 @Component({
   selector: 'app-inicio',
@@ -17,6 +18,18 @@ export class InicioComponent implements OnInit {
         console.log(datos)
         this.listaVendehumos = datos;
       })
+
+    socket.on('actualizaLosVotos', (datos: any) => {
+      console.log('Viene por socket', {datos})
+      this.listaVendehumos = this.listaVendehumos.map(vh => {
+        if (vh.id == datos.id) {
+          return {...vh, votos: datos.votos}
+        }
+        return {...vh};
+      })
+      console.log(this.listaVendehumos)
+
+    })
   }
 
 }
